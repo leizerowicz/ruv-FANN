@@ -310,7 +310,7 @@ export class SwarmManager implements vscode.Disposable {
     private async updatePerformanceMetrics(): Promise<void> {
         try {
             const workspaceFolder = this.getWorkspaceFolder();
-            if (!workspaceFolder) return;
+            if (!workspaceFolder) {return;}
 
             // Get performance metrics from ruv-swarm
             const { stdout } = await execAsync('npx ruv-swarm monitor --duration 1 --format json', {

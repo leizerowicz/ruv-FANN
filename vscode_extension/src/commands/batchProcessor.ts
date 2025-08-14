@@ -356,7 +356,7 @@ export class BatchProcessor implements vscode.Disposable {
                 const included = filters.includePatterns.some(pattern => 
                     this.matchesPattern(filePath, pattern)
                 );
-                if (!included) return false;
+                if (!included) {return false;}
             }
 
             // Exclude patterns
@@ -364,7 +364,7 @@ export class BatchProcessor implements vscode.Disposable {
                 const excluded = filters.excludePatterns.some(pattern => 
                     this.matchesPattern(filePath, pattern)
                 );
-                if (excluded) return false;
+                if (excluded) {return false;}
             }
 
             // Language filter
@@ -387,7 +387,7 @@ export class BatchProcessor implements vscode.Disposable {
                     return extension && extensions.includes(extension);
                 });
 
-                if (!matchesLanguage) return false;
+                if (!matchesLanguage) {return false;}
             }
 
             return true;

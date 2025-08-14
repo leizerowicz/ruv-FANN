@@ -4,7 +4,7 @@
 
 import * as vscode from 'vscode';
 import { spawn, ChildProcess } from 'child_process';
-import * as WebSocket from 'ws';
+import WebSocket from 'ws';
 import { EventEmitter } from 'events';
 import {
     MCPMessage,

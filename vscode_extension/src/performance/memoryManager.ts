@@ -111,7 +111,7 @@ export class LRUCache<T = any> {
 
     has(key: string): boolean {
         const entry = this._cache.get(key);
-        if (!entry) return false;
+        if (!entry) {return false;}
 
         // Check TTL
         if (entry.ttl && Date.now() > entry.timestamp + entry.ttl) {
@@ -165,7 +165,7 @@ export class LRUCache<T = any> {
     }
 
     private _estimateSize(data: any): number {
-        if (data === null || data === undefined) return 0;
+        if (data === null || data === undefined) {return 0;}
         
         if (typeof data === 'string') {
             return data.length * 2; // UTF-16

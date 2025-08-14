@@ -167,7 +167,7 @@ export class MCPManager extends EventEmitter {
     }
 
     private _updateStatusBar(): void {
-        if (!this._statusBarItem) return;
+        if (!this._statusBarItem) {return;}
 
         if (!this._config.enabled) {
             this._statusBarItem.text = '$(plug) MCP: Disabled';

@@ -275,8 +275,9 @@ class SwarmManager {
     async updatePerformanceMetrics() {
         try {
             const workspaceFolder = this.getWorkspaceFolder();
-            if (!workspaceFolder)
+            if (!workspaceFolder) {
                 return;
+            }
             // Get performance metrics from ruv-swarm
             const { stdout } = await execAsync('npx ruv-swarm monitor --duration 1 --format json', {
                 cwd: workspaceFolder.uri.fsPath,

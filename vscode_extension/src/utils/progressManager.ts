@@ -322,7 +322,7 @@ export class ProgressManager implements vscode.Disposable {
         return {
             nextStep: (stepName?: string) => {
                 const task = this.activeTasks.get(taskId);
-                if (!task || !task.metadata) return;
+                if (!task || !task.metadata) {return;}
 
                 const currentStep = (task.metadata.currentStep || 0) + 1;
                 const progress = Math.round((currentStep / totalSteps) * 100);

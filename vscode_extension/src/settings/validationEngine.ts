@@ -426,9 +426,9 @@ export class ValidationEngine implements vscode.Disposable {
             // Check for balanced brackets
             let bracketCount = 0;
             for (const char of pattern) {
-                if (char === '[') bracketCount++;
-                if (char === ']') bracketCount--;
-                if (bracketCount < 0) return false;
+                if (char === '[') {bracketCount++;}
+                if (char === ']') {bracketCount--;}
+                if (bracketCount < 0) {return false;}
             }
             
             return bracketCount === 0;

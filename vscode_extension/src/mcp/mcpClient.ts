@@ -210,7 +210,11 @@ export class MCPClient extends EventEmitter {
 
             return this._serverInfo!;
         } catch (error) {
-            throw new Error(`Failed to initialize MCP client: ${error}`);
+            if (error instanceof Error) {
+                throw error;
+            }
+            // eslint-disable-next-line no-throw-literal
+            throw new Error(`Failed to initialize MCP client: ${String(error)}`);
         }
     }
 
